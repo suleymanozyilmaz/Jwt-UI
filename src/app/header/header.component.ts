@@ -1,4 +1,7 @@
+import { ReturnStatement } from '@angular/compiler';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserAuthService } from '../_services/user-auth.service';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +9,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
+  constructor(private userAuthService: UserAuthService,
+    private router: Router) { }
+
+  ngOnInit(): void { }
+
+  public isLoggedIn() {
+    return this.userAuthService.isLoggedIn();
+
+  }
+
+  public logout() {
+    this.userAuthService.clear();
+    this.router.navigate(['/home']);
+  }
+
 
 }
