@@ -2,6 +2,7 @@ import { ReturnStatement } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserAuthService } from '../_services/user-auth.service';
+import { UserService } from '../_services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ import { UserAuthService } from '../_services/user-auth.service';
 export class HeaderComponent {
 
   constructor(private userAuthService: UserAuthService,
-    private router: Router) { }
+    private router: Router, public userService: UserService) { }
 
   ngOnInit(): void { }
 
