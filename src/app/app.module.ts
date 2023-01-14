@@ -36,14 +36,14 @@ import { UserService } from './_services/user.service';
     HttpClientModule,
     RouterModule
   ],
-  providers: 
-  [AuthGuard,  
-  { 
-  provide: HTTP_INTERCEPTORS,
-  useClass: AuthInterceptor, 
-  multi: true 
-  },
-  UserService
+  providers: [
+    AuthGuard,  
+    { 
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor, 
+    multi: true 
+    },
+    UserService
 ],
   bootstrap: [AppComponent]
 })

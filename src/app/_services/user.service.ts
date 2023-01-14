@@ -18,7 +18,19 @@ export class UserService {
     return this.httpClient.post(this.PATH_OF_API + "/authenticate", loginData, { headers: this.requestHeader })
   }
 
-  public roleMatch(allowedRoles:any): boolean {
+  public forUser() {
+    return this.httpClient.get(this.PATH_OF_API + "/forUser", {
+      responseType: 'text',
+    });
+  }
+
+  public forAdmin() {
+    return this.httpClient.get(this.PATH_OF_API + "/forAdmin", {
+      responseType: 'text',
+    });
+  }
+
+  public roleMatch(allowedRoles: any): boolean {
     let isMatch = false;
     const userRoles: any = this.userAuthService.getRoles();
 
@@ -28,8 +40,8 @@ export class UserService {
           if (userRoles[i].roleName === allowedRoles[j]) {
             isMatch = true;
             return isMatch;
-          } 
-          
+          }
+
         }
       }
     }
