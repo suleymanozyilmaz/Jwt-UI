@@ -23,12 +23,24 @@ export class UserAuthService {
     return localStorage.getItem("jwtToken")!;
   }
 
-  public clear(){
+  public clear() {
     localStorage.clear();
   }
 
   public isLoggedIn() {
     return this.getRoles() && this.getToken();
+  }
+
+  public isAdmin() {
+    const roles: any[] = this.getRoles();
+    return roles[0].roleName === "Admin";
+    //console.log(roles) ;
+  
+  }
+
+  public isUser() {
+    const roles: any[] = this.getRoles();
+    return roles[0].roleName === "User";
   }
 
 }

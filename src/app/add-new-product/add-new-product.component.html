@@ -1,0 +1,51 @@
+<div class="container mt-5">
+    <div class="card p-2">
+
+        <div class="row">
+            <div class="col-6">
+
+                <form #productForm="ngForm" (ngSubmit)="addProduct(productForm)">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Ürün Adı</mat-label>
+                        <input matInput placeholder="Ürün Adı"
+                        [(ngModel)] ="product.productName"
+                        name="productName">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Ürün Açıklaması</mat-label>
+                        <input matInput placeholder="Ürün Açıklaması"
+                        [(ngModel)] ="product.productDescription"
+                        name="productDescription">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Ürün Asıl Fiyatı</mat-label>
+                        <input matInput placeholder="Ürün Asıl Fiyatı"
+                        [(ngModel)] ="product.productActualPrice"
+                        name="productActualPrice">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Ürün İndirimli Fiyatı</mat-label>
+                        <input matInput placeholder="Ürün İndirimli Fiyatı"
+                        [(ngModel)] ="product.productDiscountedPrice"
+                        name="productDiscountedPrice">
+                    </mat-form-field>
+
+                    <div align="end">
+                        <button type="submit" mat-stroked-button color="primary" style="margin-right: 3px;">Ürünü Ekle</button>
+                        <button mat-stroked-button color="primary">Temizle</button>
+                    </div>
+                </form>
+
+
+
+
+
+            </div>
+            <div class="col-6">
+                ımage area
+            </div>
+        </div>
+
+
+    </div>
+</div>
